@@ -1,8 +1,12 @@
 
+import java.io.File
 import java.net.InetSocketAddress
-
+import java.nio.file.Files
+import java.text.{ParseException, SimpleDateFormat}
+import java.util.Date
 import akka.actor.ActorSystem
 import org.ccil.cowan.tagsoup.jaxp.SAXFactoryImpl
+import org.elasticsearch.common.xcontent.{XContentFactory, XContentBuilder}
 import spray.http._
 import spray.client.pipelining._
 
@@ -11,11 +15,17 @@ import scala.io.{Codec, Source}
 import scala.util.{Failure, Success}
 import scala.xml.factory.XMLLoader
 import scala.xml.{Elem, NodeSeq, XML, Node}
+
+
 /**
  *
  * Created by konishev on 18/06/2015.
  */
-object FetchSite {
+object FetchSite extends ESOperation {
+
+
+  implicit val system = ActorSystem()
+  import system.dispatcher // execution context for futures
 
   def main2 (args: Array[String]) {
     val price = "447 552.85 RUB"
@@ -26,83 +36,106 @@ object FetchSite {
     println(priceWrapped)
   }
 
-  def main1(args: Array[String]) {
-    //val site = fetchCommonSite("https://www.fabrikant.ru/trades/atom/PriceMonitoring/?action=view&id=2831")
-    //println(site)
+  def mainB(args: Array[String]) {
+    fetchCommonSite("https://www.fabrikant.ru/trades/corporate/ProcedurePurchase/?action=view&id=3974#lot_1", process2)
+  }
+
+  def process2(site: String) = {
+    val saxParser: XMLLoader[Elem] = XML.withSAXParser((new SAXFactoryImpl).newSAXParser)
+    val content = saxParser.loadString(site)
+
+    def actorWithRole(n: Node) = n \\ "@class" xml_sameElements(List("fname"))
+
+    val goodRows = content \\ "tr" filter actorWithRole
+
+    val e = content \\ "table" filter ((node: xml.Node) => (node \\ "@style").text == "width:100%;")
+    println("===")
+    var i = 0;
+    for (nn <-e(0).child(0).child) {
+      println(i + ": " + nn)
+      i=i+1
+    }
+  }
+
+  def mainA (args: Array[String]) {
+    val client = getClient()
+
+    val y = XContentFactory.jsonBuilder()
+      .startObject()
+      .field("href", "http://ya.ru")
+      .field("title", "some long title ann short desreption")
+      .field("price", "10.00")
+      .field("name", "Martin")
+      .endObject()
+
+    val bulkRequest = client.prepareBulk()
+    bulkRequest.add(client.prepareIndex("fabrikant", "baseInfoTest", "1").setSource(y))
+    println("added: " + bulkRequest.execute().actionGet().getItems.length)
+    system.shutdown()
   }
 
   def main (args: Array[String]) {
 
-    for (i<-1.to(2))
+    for (i<-1.to(1))
     {
-      fetchSite(i, process)
+      fetchSite(i, processSitePage)
     }
+
+    /*
+    println (x)
+
+    val id = x.href.substring(x.href.lastIndexOf("=")+1)
+    val client = getClient()
+
+    val y = XContentFactory.jsonBuilder()
+      .startObject()
+      .field("href", x.href)
+      .field("title", x.title)
+      .field("price", x.price)
+      .field("tradeType", x.tradeType)
+      .endObject()
+
+    val bulkRequest = client.prepareBulk()
+    bulkRequest.add(client.prepareIndex("fabrikant", "baseInfo", id).setSource(y))
+    println("added: " + bulkRequest.execute().actionGet().getItems.length)
+    */
+
+    //fetchCommonSite("https://www.fabrikant.ru/trades/corporate/ProcedurePurchase/?action=view&id=3974#lot_1", process2)
   }
 
-
-
-  def process(site: String) = {
-    //println(site)
-    val saxParcer: XMLLoader[Elem] = XML.withSAXParser((new SAXFactoryImpl).newSAXParser)
-    val content =  saxParcer.loadString(site)
+  def processSitePage(site: String) = {
+    val saxParser: XMLLoader[Elem] = XML.withSAXParser((new SAXFactoryImpl).newSAXParser)
+    val content =  saxParser.loadString(site)
     println("total count: " + getCount(content))
 
     for (div <- content \\ "div") {
       val divClassAttribute: Option[Seq[Node]] = div.attribute("class")
       if (divClassAttribute.isDefined) {
         if (divClassAttribute.get.toString().equalsIgnoreCase("Search-result-item")) {
-          val wrapper: NodeSeq = div \\ "div" //Search-wrapper
-          //println("NODE_dump: " + wrapper(0).child(1))
-          for (n <- wrapper.iterator) {
-            val classAttribute: Option[Seq[Node]] = n.attribute("class")
-            if (classAttribute.isDefined) {
-              val classAttributeValue: String = classAttribute.get.toString()
-              if (classAttributeValue.equalsIgnoreCase("Search-item-1")) {
-                println("---base-info---")
-                val root: NodeSeq = n \\ "div" //Search-item-1
-                val content: NodeSeq = root \\ "div" //Search-item-content
-                val option: NodeSeq = content \\ "div" //Search-item-option
-                println("href: " + (option(1).child(1) \\ "a" \\ "@href").text.trim)
-                println("title: " + (option(1).child(1) \\ "a").text.trim)
-                val price: String = (option(3).child(2)).text.trim
-                val priceWrapped = price match {
-                  case x if x.contains("RUB") => x.replaceAll("\\s", "")
-                  case x => x
-                }
-                println("price: " + priceWrapped)
-                println("type: " + (option.last.child(1) \\ "ul" \\ "li" \\ "span").text.trim)
-              }
-              else if (classAttributeValue.equalsIgnoreCase("Search-item-2")) {
-                println("---org-info---")
-                val root: NodeSeq = n \\ "div" //Search-item-2
-                val content: NodeSeq = root \\ "div" //Search-item-content
-                val option: NodeSeq = content \\ "div" //Search-item-option
-                println("status: " + (option(2).child(0)).text.trim.replaceAll("\\s+", " "))
-                println("ogr name: " + (option(1).child(3).child(3)).text.trim)
-                println("ogr link: " + (option(1).child(3) \\ "a" \\ "@href").text.trim)
-              }
-              else if (classAttributeValue.equalsIgnoreCase("Search-item-3")) {
-                println("---status-info---")
-                val root: NodeSeq = n \\ "div" //Search-item-2
-                val content: NodeSeq = root \\ "div" //Search-item-content
-                val option: NodeSeq = content \\ "div" //Search-item-option
+          val wrapper: NodeSeq = div \\ "div"//Search-wrapper
+          val itemWrapper: Node = wrapper(1)
 
-                println("trade status: " + option(2).text.trim)
-                println("publish date: " + option(3).child(2).text.trim)
-                println("end date: " + option(4).child(2).text.trim)
-              }
-              else if (classAttributeValue.equalsIgnoreCase("Search-item-4")) {
-                println("---traders-info---")
-                val root: NodeSeq = n \\ "div" //Search-item-2
-                val content: NodeSeq = root \\ "div" //Search-item-content
-                val option: NodeSeq = content \\ "div" //Search-item-option
+          val t = new Trade(
+          BaseInfo.create(itemWrapper.child(1)),
+          OrgInfo.create(itemWrapper.child(3)),
+          TradeStatus.create(itemWrapper.child(5)),
+          TradeInfo.create(itemWrapper.child(7)))
+          println(t)
 
-                println("views count: " + option(2).child(2).text.trim)
-                println("traders count: " + option(3).child(2).text.trim)
-                println
-              }
-            }
-          }
+          val id = t.base.href.substring(t.base.href.lastIndexOf("=")+1)
+          val client = getClient()
+          val bulkRequest = client.prepareBulk()
+
+          val y = XContentFactory.jsonBuilder()
+            .startObject()
+            .field("href", t.base.href)
+            .field("title", t.base.title)
+            .field("price", t.base.price)
+            .field("tradeType", t.base.tradeType)
+            .endObject()
+
+          bulkRequest.add(client.prepareIndex("fabrikant", "trades", id).setSource(y))
+          println("added: " + bulkRequest.execute().actionGet().getItems.length)
         }
       }
     }
@@ -127,17 +160,33 @@ object FetchSite {
   }
 
   def fetchCommonSite(targetUrl: String, func: (String) => Unit) = {
-    implicit val system = ActorSystem()
-    import system.dispatcher // execution context for futures
+
+    //val fileContents = Source.fromFile("ex.html").getLines.mkString
+
 
     val pipeline: HttpRequest => Future[HttpResponse] = sendReceive
 
     val response: Future[HttpResponse] = pipeline(Get(targetUrl))
 
-    val r = response onComplete{
+
+    response onComplete{
       case Failure(ex) => ex.printStackTrace()
+        system.shutdown()
+        //func.apply(Source.fromFile("src/main/resources/dummy.html").getLines.mkString)
       case Success(resp) => println("success for: " + targetUrl)
-        func.apply(resp.message.entity.asString)
+        val respSource: String = resp.message.entity.asString
+        system.shutdown()
+        //printToFile(new File("1.html")) { p => respSource.toString }
+        func.apply(respSource)
     }
+
+  }
+
+  def printToFile(f: java.io.File)(op: java.io.PrintWriter => Unit) {
+    val p = new java.io.PrintWriter(f)
+    try { op(p) } finally { p.close() }
   }
 }
+
+
+

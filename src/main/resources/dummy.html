@@ -1,0 +1,2332 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Список процедур</title>
+
+    <script type="text/javascript" src="//content.fabrikant.ru/r-047/vendor/jquery-ui/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="//content.fabrikant.ru/r-047/vendor/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="//content.fabrikant.ru/r-047/themes/fabrikant-new/js/common.js"></script>
+    <script type="text/javascript" src="//content.fabrikant.ru/r-047/themes/fabrikant-new/js/single/lang_ru.js"></script>
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!--[if lt IE 9]>
+    <script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details,button," +
+		"figure,figure,figcaption,footer,header,hgroup,mark,menu,meter,nav,output," +
+		"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+		document.createElement(e[i]);
+	}
+</script>
+    <![endif]-->
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="//content.fabrikant.ru/r-047/themes/fabrikant-new/css/common.css" type="text/css">
+
+    <!--[if lt IE 10]><link rel="stylesheet" href="//content.fabrikant.ru/r-047/themes/fabrikant-new/css/single/style_ie.css"><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" href="//content.fabrikant.ru/r-047/themes/fabrikant-new/css/single/style_ie7.css"><![endif]-->
+    <!--[if IE 6]><link rel="stylesheet" href="//content.fabrikant.ru/r-047/themes/fabrikant-new/css/single/style_ie6.css"><![endif]-->
+
+
+
+</head>
+<body>
+
+
+<div class="main">
+    <div class="main_in">
+
+
+        <header>
+
+            <div class="h_top cf">
+                <div class="h_date">
+                    <span class="date"></span>
+                    <span class="clock"></span>
+                    <span class="timezone">(время московское)</span>
+                </div>
+                <div class="icons">
+                    <a class="home" href="/"></a>
+                    <a id="mail_send" data-link="emailback" class="mail" href="#"></a>
+                    <a class="print" href="javascript:window.print();"></a>
+                </div>
+                <div class="h_phones">
+					<span>
+						<span class="icon_phone"></span>
+						<span>
+							Москва (495) 514-02-04,
+							Россия 8-800-200-02-04
+						</span>
+						<a id="callback-link" href="#" class="callback cr15">Заказать звонок</a>
+					</span>
+                </div>
+            </div>
+
+            <div class="h_middle gr_d_blue cr5500 cf">
+                <div class="for_logo">
+                    <div>
+                        <a href="/" title="ТП Фабрикант.ру: госзакупки, электронные торги">
+                            <img width="243" height="43"
+                                 src="//content.fabrikant.ru/r-047/themes/fabrikant-new/media/logo_new.gif"
+                                 alt="ТП Фабрикант.ру: госзакупки, электронные торги"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="about">Торговый портал Fabrikant.ru</div>
+                <div class="reg rg_l_blue2 cr5"
+                        >
+
+                    <form action="/personal/login/" method="post" class="c-i">
+                        <input type="hidden" name="cookies_time" id="cookies_time" value="1" class="cbox">
+                        <span class="fl_right"><a href="/personal/registration/">Зарегистрироваться</a></span>
+                        <b>Вход в систему</b>
+                        <form>
+                            <div class="reg_pole cf">
+                                <span class="for_input cr3"><label for="reg_login">Логин</label><input type="text" autocomplete="off" name="f_login" value="" id="reg_login"></span>
+                                <span class="for_input cr3"><label for="reg_password">Пароль</label><input type="password" name="f_password" value="" id="reg_password"></span>
+                                <input type="submit" value="Войти" class="fon_submit submit cr3">
+                            </div>
+                        </form>
+                        <a href="/personal/login/sign/" class="auth_ep"><img src="//content.fabrikant.ru/r-047/themes/fabrikant-new/media/sign.gif" width="21" height="18" alt="">Войти по ЭП</a>
+                        <a href="/?action=lost_password" target="_blank">Я забыл пароль</a>
+                    </form>
+
+
+
+                </div>
+            </div>
+
+            <nav>
+                <ul class="cf">
+                    <li><a href="/about/">О компании</a></li>
+                    <li><a href="/personal/">Личный кабинет</a></li>
+                    <li><a href="/trades/procedure/search/">Торговая площадка</a></li>
+                    <li><a href="/firms/">Участники</a></li>
+                    <li><a href="/news/">Новости</a></li>
+                    <li><a href="/personal/registration/">Регистрация</a></li>
+                    <li><a href="/publications/">Фабрикант в СМИ</a></li>
+                    <li><a id="emailback-link" href="#">Обратная связь</a></li>
+                    <li>
+                        <a href="javascript:;">Сервисы</a>
+                        <div>
+                            <ul class="cr0555">
+                                <li><a href="/teaching/?action=seminars&act=semlist">Обучение</a></li>
+                                <li><a href="/services/?action=purchase_management">Управление закупками на базе «1С:Предприятие»</a></li>
+                                <li><a href="/services/?action=development">Разработка ПО</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+                    <li class="end"></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <div class="for_section cf">
+
+            <div class="butt_nav_left"><span id="butt_nav_left"></span></div>
+            <div class="dop_menu cr5 cf">
+
+                <a href="/" class="c-f-k">Главная страница</a>/<a href="/trades/procedure/search/" class="c-f-k">Торговая площадка</a>/<span class="c-f-k">Список процедур</span>
+            </div>
+
+            <div class="nav_left block_open" id="nav_left">
+                <ul class="nav">
+                    <li class="gr_l_blue2 cr3"><a href="/rules/" title="Правила работы" class="cr3">Правила работы</a></li>
+                    <li class="gr_l_blue2 cr3"><a href="/signature/" title="ЭЦП" class="cr3">Электронная подпись</a></li>
+                    <li class="gr_l_blue2 cr3"><a href="/personal/tariff/add/" title="Тарифные планы" class="cr3">Тарифные планы</a></li>
+                    <li class="gr_l_blue2 cr3"><a href="/medals/" title="Закупщик года и Надежный поставщик" class="cr3">Закупщик года и Надежный поставщик</a></li>
+                    <li class="gr_l_blue2 cr3"><a href="http://demo.fabrikant.ru/" title="Выход в DEMO-версию" class="cr3">Выход в DEMO-версию</a></li>
+                </ul>
+                <div class="partners">
+                    <div class="h3">Наши партнеры</div>
+                    <!--баннер по таску https://fabrikant20.atlassian.net/browse/SITE-1552-->
+                    <!--		--><!--			<div class="line">-->
+                    <!--				<a href="https://www.icandeliver.ru/fabrikant.ru/register?utm_source=banner&utm_medium=fabrikant&utm_campaign=080715" target="_blank"><img src="--><!--themes/fabrikant-new/media/partners/icandeliver_banner.gif" width="224" height="100" title="icandeliver" alt="icandeliver" onclick="yaCounter11864500.reachGoal('icandeliver'); return true;"></a>-->
+                    <!--			</div>-->
+                    <!--		-->		<div class="line">
+                    <a href="http://gazneftetorg.ru" target="_blank"><img src="//content.fabrikant.ru/r-047/themes/fabrikant-new/media/partners/logo_gazneft.png" width="224" height="100" title="Газнефтеторг" alt="Газнефтеторг"></a>
+                </div>
+                    <div class="line">
+                        <a href="http://oborontorg.ru" target="_blank"><img src="//content.fabrikant.ru/r-047/themes/fabrikant-new/media/partners/logo_oboron.png" width="224" height="100" title="Оборонторг" alt="Оборонторг"></a>
+                    </div>
+                    <div class="line">
+                        <a href="http://sstorg.ru" target="_blank"><img src="//content.fabrikant.ru/r-047/themes/fabrikant-new/media/partners/logo_sstorg.png" width="224" height="100" title="Спецстройторг" alt="Спецстройторг"></a>
+                    </div>
+                    <div class="line">
+                        <a href="http://fabrikant.ua" target="_blank"><img src="//content.fabrikant.ru/r-047/themes/fabrikant-new/media/partners/logo_fabr_ua.png" width="224" height="100" title="Фабрикант.юа" alt="Фабрикант.юа"></a>
+                    </div>
+                    <div class="line">
+                        <a href="http://picon.ru" target="_blank"><img src="//content.fabrikant.ru/r-047/themes/fabrikant-new/media/partners/logo_picon.png" width="224" height="100" title="Пикон" alt="Пикон"></a>
+                    </div>
+                    <div class="line">
+                        <a href="http://etp-micex.ru" target="_blank"><img src="//content.fabrikant.ru/r-047/themes/fabrikant-new/media/partners/logo_mmvb.png" width="224" height="100" title="ЭТП ММВБ" alt="ЭТП ММВБ"></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <section>
+
+
+
+                <div class="Search-text">
+
+
+
+
+                    <br/>
+                </div>
+
+
+
+                <p>
+                    <a href="/market/">Перейти на старую версию торговой площадки</a>
+                </p>
+                <br/>
+
+                <form action="" method="get" class="Search">
+
+                    <div class="Search-tabs">
+                        <div class="Search-tab current">
+                            <input type="radio" name="type" value="0" id="type[0]" />
+                            <label for="type[0]"><span>Закупка</span></label>
+                        </div>
+                        <div class="Search-tab">
+                            <input type="radio" name="type" value="1" id="type[1]" />
+                            <label for="type[1]"><span>Продажа</span></label>
+                        </div>
+                    </div>
+
+                    <div class="Search-query">
+                        <div class="Search-query-example">Например: <a href="javascript:;" class="Search-anchor Search-query-example-anchor">фильтр</a></div>
+                        <div class="Search-query-hint">Можно указать в запросе номер торговой процедуры</div>
+                        <div class="Search-query-string">
+
+                            <div class="Clear-query-button ml-20">
+                                <input type="button" id="clear_submit" onClick="window.location='/trades/procedure/search/'">
+                                <label for="clear_submit">Сбросить</label>
+                            </div>
+
+                            <div class="Search-query-button">
+                                <input type="submit" id="search_submit" />
+                                <label for="search_submit">Искать</label>
+                            </div>
+
+                            <div class="Search-query-field">
+                                <label for="search_query">Поисковый запрос</label>
+                                <div class="Search-query-placeholder"></div>
+                                <input type="text" autocomplete="off" maxlength="250" name="query" id="search_query" />
+                            </div>
+
+                        </div>
+                        <a href="javascript:;" class="Search-advanced Search-anchor">Расширенный поиск <span class="search-anchor-str"></span></a>
+
+
+                        <div class="Search-advanced-form cf" >
+                            <div class="Search-advanced-form-left">
+
+                                <div class="Search-advanced-form-cell mr-10">
+                                    <div class="mt-10"><label for="procedure_stage">Статусы торгов:</label></div>
+                                    <div class="for_select mt-5 cr3">
+                                        <select name="procedure_stage" autocomplete="off" id="procedure_stage" class="form-control">
+                                            <option value="0">Все торги по указанному запросу</option>
+                                            <option value="1" >Только с возможностью участия</option>
+                                            <option value="2" >Действующие торги</option>
+                                            <option value="4" >Архивные торги</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="Search-advanced-form-cell mr-10">
+                                    <div class="mt-10">Начальная цена:</div>
+                                    <div class="for_3_columns mt-5 cf">
+                                        <div class="column_left">
+                                            <div class="in_3column">
+                                                <div><label for="price_from">от</label></div>
+                                                <div class="for_input mt-5 cr3003">
+                                                    <input
+                                                            name="price_from" type="text" id="price_from"
+                                                            autocomplete="off"
+                                                            value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column_center">
+                                            <div class="in_3column">
+                                                <div><label for="price_to">до</label></div>
+                                                <div class="for_input mt-5 cr3003">
+                                                    <input
+                                                            name="price_to" type="text" id="price_to"
+                                                            autocomplete="off"
+                                                            value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column_right">
+                                            <div class="in_3column">
+                                                <div><label for="currency">валюта</label></div>
+                                                <div class="for_select mt-5 cr3">
+                                                    <select name="currency" autocomplete="off" id="currency" class="form-control">
+                                                        <option value="0" selected>Все валюты</option>
+                                                        <option value="1" >RUB</option>
+                                                        <option value="11" >USD</option>
+                                                        <option value="12" >EUR</option>
+                                                        <option value="29" >UAH</option>
+                                                        <option value="30" >GBP</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="Search-advanced-form-cell mr-10">
+                                    <div class="mt-15">Обеспечение:</div>
+                                    <div class="mt-5 cf">
+                                        <div class="for_radio no_br fl_left mr-15 cf">
+                                            <input name="ensure" value="yes" autocomplete="off" id="ensure_yes" type="radio" >
+                                            <label for="ensure_yes" class="no_br fl_left"><span></span>Процедуры с обеспечением</label>
+                                        </div>
+                                        <div class="for_radio no_br fl_left mr-15 cf">
+                                            <input name="ensure" value="no" autocomplete="off" id="ensure_no" type="radio" >
+                                            <label for="ensure_no" class="no_br fl_left"><span></span>Процедуры без обеспечения</label>
+                                        </div>
+                                        <div class="for_radio no_br fl_left cf">
+                                            <input name="ensure" value="all" autocomplete="off" id="ensure_all" type="radio"  checked="checked" >
+                                            <label for="ensure_all" class="no_br fl_left"><span></span>Все процедуры</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="Search-advanced-form-right">
+
+                                <div class="Search-advanced-form-cell ml-10">
+
+
+
+
+
+                                    <div class="mt-10 ">
+                                        <label for="section[0]">Секция торговой площадки:</label>
+
+
+                                        <div class="for_select mt-5 cr3">
+                                            <select name="sections" autocomplete="off" id="section[0]" class="Search-advanced-sections-select form-control" >
+                                                <option value="">Все секции торговой площадки</option>
+                                                <option value="100">Судостроение</option>
+                                                <option value="200">Торги по 223-ФЗ</option>
+                                                <option value="400">Корпоративные торги</option>
+                                                <option value="500">Атомная отрасль</option>
+                                                <option value="700">Госзакупки</option>
+                                                <option value="800">Торги предприятий Группы «Норильский Никель»</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                    <div class="mt-10 block_close">
+                                        <label for="section[1]">Секция торговой площадки:</label>
+
+
+                                        <div class="for_select mt-5 cr3">
+                                            <select name="sections" autocomplete="off" id="section[1]" class="Search-advanced-sections-select form-control"  disabled="disabled">
+                                                <option value="">Все секции торговой площадки</option>
+                                                <option value="400">Корпоративные торги</option>
+                                                <option value="300">Банкротство</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="Search-advanced-form-cell ml-10">
+                                    <div class="mt-10"><label for="date_type">Отбор по датам торгов:</label></div>
+                                    <div class="for_select mt-5 cr3">
+                                        <select name="date_type" autocomplete="off" id="date_type" class="form-control">
+                                            <option value="date_publication" selected="selected">Дате публикации</option>
+                                            <option value="date_unsealing" >Дате вскрытия конвертов</option>
+                                            <option value="date_end" >Дате завершения торгов</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="Search-advanced-form-cell ml-10">
+                                    <div class="Search-advanced-form-range cf">
+                                        <div class="Search-advanced-form-range-left">
+                                            <div class="Search-advanced-first-column-wrapper">
+                                                <div><label for="date_from">от</label></div>
+                                                <div class="calendar_form mt-5 cf">
+                                                    <a href="#" class="form_icon datetime_clear cr0330" title="Очистить поле"><span
+                                                            class="del_calendar"></span></a>
+                                                    <a href="#" class="form_icon calendar_show" title="Календарь"><span class="calendar"></span></a>
+                                                    <div class="for_input cr3003">
+                                                        <input
+                                                                name="date_from" class="calendar_input_all" type="text" id="date_from"
+                                                                autocomplete="off"
+                                                                value=""
+                                                                >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-advanced-form-range-right">
+                                            <div class="Search-advanced-second-column-wrapper">
+                                                <div><label for="date_to">до</label></div>
+                                                <div class="calendar_form mt-5 cf">
+                                                    <a href="#" class="form_icon datetime_clear cr0330" title="Очистить поле"><span
+                                                            class="del_calendar"></span></a>
+                                                    <a href="#" class="form_icon calendar_show" title="Календарь"><span class="calendar"></span></a>
+                                                    <div class="for_input cr3003">
+                                                        <input
+                                                                name="date_to" class="calendar_input_all" type="text" id="date_to"
+                                                                autocomplete="off"
+                                                                value=""
+                                                                >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="clear mt-15 cf">
+                                <div class="w-33pr fl_left">
+                                    <a class="dashed fs-14" href="#" id="dialog-classifier-link" data-target="dialog-classifier">По классификатору</a>
+                                    <span class="arrow_down"><img src="//content.fabrikant.ru/r-047//themes/fabrikant-new/media/arrow_down.png" alt=""/></span>
+
+<span
+        id="dialog-classifier-values-visual"
+        title="<span></span>"
+        class="color-tip"
+        style="display: none;" 	data-content-template="(Выбрано: {{value}})"
+        ><span>(Выбрано: 0)</span></span>
+
+<span id="dialog-classifier-values">
+	</span>
+                                </div>
+                                <div class="w-33pr fl_left">
+
+
+                                    <a class="dashed fs-14" href="#" id="dialog-region-link" data-target="dialog-region">По региону</a>
+                                    <span class="arrow_down"><img src="//content.fabrikant.ru/r-047//themes/fabrikant-new/media/arrow_down.png" alt=""/></span>
+
+
+				<span
+                        id="dialog-region-values-visual"
+                        title="<span></span>"
+                        class="color-tip"
+                        style="display: none;" 					data-content-template="(Выбрано: {{value}})"
+                        ><span>(Выбрано: 0)</span></span>
+
+				<span id="dialog-region-values">
+									</span>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="Search-result clear">
+                        <div class="Search-header">
+                            <div class="Search-result-count">Найдено <span>427965</span> торгов</div>
+
+
+                            <div class="Search-result-count-on-page">
+                                <span>Вывести по: </span>
+                                <select name="count_on_page">
+                                    <option value="10" selected>10</option>
+                                    <option value="20" >20</option>
+                                    <option value="40" >40</option>
+                                </select>
+                            </div>
+                            <div class="Search-result-order">
+
+                                <input type="hidden" class="Search-order-by" name="order_by" value="date_publication"/>
+                                <input type="hidden" class="Search-order-direction" name="order_direction" value="1"/>
+
+                                Сортировать:
+                                <a href="javascript:;" class="Search-anchor Search-result-order-switcher">
+                                    по <span>дате публикации</span>
+                                </a>
+
+                                <a href="javascript:;" class="Search-result-order-direction "></a>
+
+                                <div class="Search-result-order-cloud">
+                                    <div class="Search-result-order-cloud-title">
+                                        дате публикации		</div>
+                                    <table>
+                                        <tr data-order-by="default">
+                                            <td>релевантности</td>
+                                            <td data-order-direction="0">
+                                                <a href="javascript:;" class="Search-result-order-anchor Search-anchor">
+                                                    По возрастанию
+                                                </a>
+                                            </td>
+                                            <td data-order-direction="1">
+                                                <a href="javascript:;" class="Search-result-order-anchor Search-anchor">
+                                                    По убыванию
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr data-order-by="date_publication">
+                                            <td>дате публикации</td>
+                                            <td data-order-direction="0">
+                                                <a href="javascript:;" class="Search-result-order-anchor Search-anchor" >
+                                                    Сначала ранние
+                                                </a>
+                                            </td>
+                                            <td data-order-direction="1">
+                                                <a href="javascript:;" class="Search-result-order-anchor Search-anchor">
+                                                    Сначала поздние
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr data-order-by="date_unsealing">
+                                            <td>дате вскрытия конвертов</td>
+                                            <td data-order-direction="0">
+                                                <a href="javascript:;" class="Search-result-order-anchor Search-anchor">
+                                                    Сначала ранние
+                                                </a>
+                                            </td>
+                                            <td data-order-direction="1">
+                                                <a href="javascript:;" class="Search-result-order-anchor Search-anchor">
+                                                    Сначала поздние
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr data-order-by="date_end">
+                                            <td>дате завершения</td>
+                                            <td data-order-direction="0">
+                                                <a href="javascript:;" class="Search-result-order-anchor Search-anchor">
+                                                    Сначала ранние
+                                                </a>
+                                            </td>
+                                            <td data-order-direction="1">
+                                                <a href="javascript:;" class="Search-result-order-anchor Search-anchor">
+                                                    Сначала поздние
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr data-order-by="price">
+                                            <td>начальной цене</td>
+                                            <td data-order-direction="0">
+                                                <a href="javascript:;" class="Search-result-order-anchor Search-anchor">
+                                                    По возрастанию
+                                                </a>
+                                            </td>
+                                            <td data-order-direction="1">
+                                                <a href="javascript:;" class="Search-result-order-anchor Search-anchor">
+                                                    По убыванию
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr data-order-by="organizer_name">
+                                            <td>организатору торгов</td>
+                                            <td data-order-direction="0">
+                                                <a href="javascript:;" class="Search-result-order-anchor Search-anchor">
+                                                    По алфавиту (А-Я)
+                                                </a>
+                                            </td>
+                                            <td data-order-direction="1">
+                                                <a href="javascript:;" class="Search-result-order-anchor Search-anchor">
+                                                    По алфавиту (Я-А)
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+
+
+                            <div class="Search-clear"></div>
+                        </div>
+
+                        <div class="Search-filters" data-filter-id="">
+
+
+
+                            <div class="Search-filter">
+                                <a href="/trades/procedure/search/?filter_id=1&query=" class="Search-filter-title">
+                                    Все торги<br/>
+                                    <small>Закупка</small>
+                                </a>
+                            </div>
+
+
+
+                            <div class="Search-filter">
+                                <a href="/trades/procedure/search/?filter_id=2&query=" class="Search-filter-title">
+                                    Корпоративные торги<br/>
+                                    <small>Закупка</small>
+                                </a>
+                            </div>
+
+
+
+                            <div class="Search-filter">
+                                <a href="/trades/procedure/search/?filter_id=3&query=" class="Search-filter-title">
+                                    Атомная отрасль<br/>
+                                    <small>Закупка</small>
+                                </a>
+                            </div>
+
+
+
+                            <div class="Search-filter">
+                                <a href="/trades/procedure/search/?filter_id=4&query=" class="Search-filter-title">
+                                    Судостроение<br/>
+                                    <small>Закупка</small>
+                                </a>
+                            </div>
+
+
+
+                            <div class="Search-filter">
+                                <a href="/trades/procedure/search/?filter_id=10" class="Search-filter-title">
+                                    Торги предприятий Группы «Норильский Никель»<br/>
+                                    <small>Закупка</small>
+                                </a>
+                            </div>
+
+
+
+                            <div class="Search-filter">
+                                <a href="/trades/procedure/search/?filter_id=5&query=" class="Search-filter-title">
+                                    Торги по 223ФЗ<br/>
+                                    <small>Закупка</small>
+                                </a>
+                            </div>
+
+
+
+                            <div class="Search-filter">
+                                <a href="/trades/procedure/search/?filter_id=7&query=" class="Search-filter-title">
+                                    Госзакупки<br/>
+                                    <small>Закупка</small>
+                                </a>
+                            </div>
+
+
+
+                            <div class="Search-filter">
+                                <a href="/trades/procedure/search/?filter_id=9&query=" class="Search-filter-title">
+                                    Все торги<br/>
+                                    <small>Продажа</small>
+                                </a>
+                            </div>
+
+
+
+                            <div class="Search-filter">
+                                <a href="/trades/procedure/search/?filter_id=8&query=" class="Search-filter-title">
+                                    Корпоративные торги<br/>
+                                    <small>Продажа</small>
+                                </a>
+                            </div>
+
+
+
+                            <div class="Search-filter">
+                                <a href="/trades/procedure/search/?filter_id=6&query=" class="Search-filter-title">
+                                    Торги по банкротству<br/>
+                                    <small>Продажа</small>
+                                </a>
+                            </div>
+
+
+                        </div>
+
+                        <div class="Search-wrapper">
+                            <div class="Search-list">
+
+
+
+
+                                <div class="Search-result-item">
+                                    <div class="Search-wrapper">
+                                        <div class="Search-item-1">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <a
+                                                            href="/trades/atom/PriceRequest/?action=view&id=23700"
+                                                            >работы по модернизации оборудования системы диагностики режима перевозбуждения 6 рабочих преобразователей СПЧС180-380Т в здании № 801</a>
+                                                </div>
+
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Начальная цена: </span>
+
+                                                    2 123 767.73&nbsp;RUB
+                                                </div>
+                                                <div class="Search-item-option">
+
+                                                    <div class="Search-item-purchase">
+                                                        <ul class="not_list"><li><span>Закупка</span></li></ul>
+                                                    </div>
+
+
+                                                    <a class="Search-item-button" href="/trades/atom/PriceRequest/?action=view&id=23700">Принять участие</a>
+
+                                                    <br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-2">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+
+                                                    Запрос цен					№ 2202326-1				</div>
+                                                <div class="Search-item-option">
+
+											<span class="Search-item-label">
+											Организатор:
+										</span>
+                                                    <a target="_blank" href="/firms/view_firm.html?id=lPuLZUP1Ije8U3PQDTcVnPiAs3D1t40NOiEZUel6ILi8-p2fc9g8-PmiWVjxz4Fu7u_KY6-sL96F-EltSgu7uA&fi=68957">
+                                                        Акционерное общество &quot;ТВЭЛ-СТРОЙ&quot;						</a>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-3">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    Идёт приём заявок				</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата публикации: </span>
+                                                    07.08.2015 16:12					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата завершения: </span>
+                                                    21.08.2015 23:59					</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-4">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Просмотров: </span>
+
+                                                    0					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Участников: </span>
+
+                                                    0					</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="Search-clear"></div>
+                                    <div class="Search-item-advanced">
+
+
+
+                                        <div class="Search-item-advanced-content">
+
+                                            <b>
+                                                Атомная отрасль		</b>
+
+                                            <div style="padding: 10px">
+                                                Чтобы просматривать расширенную информацию о торговых процедурах, пожалуйста, выполните вход в систему, используя поля в правой верхней части страницы.
+                                                <br>
+                                                Если Вы не являетесь участником Системы, Вам необходимо <a href="/personal/registration/">зарегистрироваться</a>. Регистрация является бесплатной!
+                                            </div>
+
+
+                                        </div>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_left"></a>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_right"></a>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="Search-result-item">
+                                    <div class="Search-wrapper">
+                                        <div class="Search-item-1">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <a
+                                                            href="/trades/atom/PriceMonitoring/?action=view&id=3073"
+                                                            >Круг г/к 70-В1 2590/40Х-2 4543</a>
+                                                </div>
+
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Начальная цена: </span>
+
+                                                    1.00&nbsp;RUB
+                                                </div>
+                                                <div class="Search-item-option">
+
+                                                    <div class="Search-item-purchase">
+                                                        <ul class="not_list"><li><span>Закупка</span></li></ul>
+                                                    </div>
+
+
+                                                    <a class="Search-item-button" href="/trades/atom/PriceMonitoring/?action=view&id=3073">Принять участие</a>
+
+                                                    <br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-2">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+
+                                                    Мониторинг цен					№ 2202332-1				</div>
+                                                <div class="Search-item-option">
+
+											<span class="Search-item-label">
+											Организатор:
+										</span>
+                                                    <a target="_blank" href="/firms/view_firm.html?id=lPuLZUP1Ije8U3PQDTcVnIlgae7IKZYBK_BgRvzg7WBwdb3sv121CcHPxS2KJTCcXbYPAwEiIgvr7PDLV-Ntxw&fi=76103">
+                                                        Публичное акционерное общество &quot;Машиностроительный завод&quot;						</a>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-3">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    Идёт приём заявок				</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата публикации: </span>
+                                                    07.08.2015 16:11					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата завершения: </span>
+                                                    18.08.2015 23:59					</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-4">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Просмотров: </span>
+
+                                                    0					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Участников: </span>
+
+                                                    0					</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="Search-clear"></div>
+                                    <div class="Search-item-advanced">
+
+
+
+                                        <div class="Search-item-advanced-content">
+
+                                            <b>
+                                                Атомная отрасль		</b>
+
+                                            <div style="padding: 10px">
+                                                Чтобы просматривать расширенную информацию о торговых процедурах, пожалуйста, выполните вход в систему, используя поля в правой верхней части страницы.
+                                                <br>
+                                                Если Вы не являетесь участником Системы, Вам необходимо <a href="/personal/registration/">зарегистрироваться</a>. Регистрация является бесплатной!
+                                            </div>
+
+
+                                        </div>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_left"></a>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_right"></a>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="Search-result-item">
+                                    <div class="Search-wrapper">
+                                        <div class="Search-item-1">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <a
+                                                            href="/trades/atom/PriceMonitoring/?action=view&id=3073"
+                                                            >Круг г/к В1-I-НД-25 ГОСТ 2590/ХВГ-А-2ГП</a>
+                                                </div>
+
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Начальная цена: </span>
+
+                                                    1.00&nbsp;RUB
+                                                </div>
+                                                <div class="Search-item-option">
+
+                                                    <div class="Search-item-purchase">
+                                                        <ul class="not_list"><li><span>Закупка</span></li></ul>
+                                                    </div>
+
+
+                                                    <a class="Search-item-button" href="/trades/atom/PriceMonitoring/?action=view&id=3073">Принять участие</a>
+
+                                                    <br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-2">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+
+                                                    Мониторинг цен					№ 2202332-2				</div>
+                                                <div class="Search-item-option">
+
+											<span class="Search-item-label">
+											Организатор:
+										</span>
+                                                    <a target="_blank" href="/firms/view_firm.html?id=lPuLZUP1Ije8U3PQDTcVnIlgae7IKZYBK_BgRvzg7WBwdb3sv121CcHPxS2KJTCcXbYPAwEiIgvr7PDLV-Ntxw&fi=76103">
+                                                        Публичное акционерное общество &quot;Машиностроительный завод&quot;						</a>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-3">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    Идёт приём заявок				</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата публикации: </span>
+                                                    07.08.2015 16:11					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата завершения: </span>
+                                                    18.08.2015 23:59					</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-4">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Просмотров: </span>
+
+                                                    0					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Участников: </span>
+
+                                                    0					</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="Search-clear"></div>
+                                    <div class="Search-item-advanced">
+
+
+
+                                        <div class="Search-item-advanced-content">
+
+                                            <b>
+                                                Атомная отрасль		</b>
+
+                                            <div style="padding: 10px">
+                                                Чтобы просматривать расширенную информацию о торговых процедурах, пожалуйста, выполните вход в систему, используя поля в правой верхней части страницы.
+                                                <br>
+                                                Если Вы не являетесь участником Системы, Вам необходимо <a href="/personal/registration/">зарегистрироваться</a>. Регистрация является бесплатной!
+                                            </div>
+
+
+                                        </div>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_left"></a>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_right"></a>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="Search-result-item">
+                                    <div class="Search-wrapper">
+                                        <div class="Search-item-1">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <a
+                                                            href="/trades/atom/PriceMonitoring/?action=view&id=3073"
+                                                            >Круг г/к В1-50 2590/45-2ГП-М1-ТВ1 1050</a>
+                                                </div>
+
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Начальная цена: </span>
+
+                                                    1.00&nbsp;RUB
+                                                </div>
+                                                <div class="Search-item-option">
+
+                                                    <div class="Search-item-purchase">
+                                                        <ul class="not_list"><li><span>Закупка</span></li></ul>
+                                                    </div>
+
+
+                                                    <a class="Search-item-button" href="/trades/atom/PriceMonitoring/?action=view&id=3073">Принять участие</a>
+
+                                                    <br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-2">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+
+                                                    Мониторинг цен					№ 2202332-3				</div>
+                                                <div class="Search-item-option">
+
+											<span class="Search-item-label">
+											Организатор:
+										</span>
+                                                    <a target="_blank" href="/firms/view_firm.html?id=lPuLZUP1Ije8U3PQDTcVnIlgae7IKZYBK_BgRvzg7WBwdb3sv121CcHPxS2KJTCcXbYPAwEiIgvr7PDLV-Ntxw&fi=76103">
+                                                        Публичное акционерное общество &quot;Машиностроительный завод&quot;						</a>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-3">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    Идёт приём заявок				</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата публикации: </span>
+                                                    07.08.2015 16:11					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата завершения: </span>
+                                                    18.08.2015 23:59					</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-4">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Просмотров: </span>
+
+                                                    0					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Участников: </span>
+
+                                                    0					</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="Search-clear"></div>
+                                    <div class="Search-item-advanced">
+
+
+
+                                        <div class="Search-item-advanced-content">
+
+                                            <b>
+                                                Атомная отрасль		</b>
+
+                                            <div style="padding: 10px">
+                                                Чтобы просматривать расширенную информацию о торговых процедурах, пожалуйста, выполните вход в систему, используя поля в правой верхней части страницы.
+                                                <br>
+                                                Если Вы не являетесь участником Системы, Вам необходимо <a href="/personal/registration/">зарегистрироваться</a>. Регистрация является бесплатной!
+                                            </div>
+
+
+                                        </div>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_left"></a>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_right"></a>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="Search-result-item">
+                                    <div class="Search-wrapper">
+                                        <div class="Search-item-1">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <a
+                                                            href="/trades/atom/PriceMonitoring/?action=view&id=3073"
+                                                            >Круг г/к В-I-70 ГОСТ 2590/ХВГ-Б-4ГП</a>
+                                                </div>
+
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Начальная цена: </span>
+
+                                                    1.00&nbsp;RUB
+                                                </div>
+                                                <div class="Search-item-option">
+
+                                                    <div class="Search-item-purchase">
+                                                        <ul class="not_list"><li><span>Закупка</span></li></ul>
+                                                    </div>
+
+
+                                                    <a class="Search-item-button" href="/trades/atom/PriceMonitoring/?action=view&id=3073">Принять участие</a>
+
+                                                    <br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-2">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+
+                                                    Мониторинг цен					№ 2202332-4				</div>
+                                                <div class="Search-item-option">
+
+											<span class="Search-item-label">
+											Организатор:
+										</span>
+                                                    <a target="_blank" href="/firms/view_firm.html?id=lPuLZUP1Ije8U3PQDTcVnIlgae7IKZYBK_BgRvzg7WBwdb3sv121CcHPxS2KJTCcXbYPAwEiIgvr7PDLV-Ntxw&fi=76103">
+                                                        Публичное акционерное общество &quot;Машиностроительный завод&quot;						</a>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-3">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    Идёт приём заявок				</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата публикации: </span>
+                                                    07.08.2015 16:11					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата завершения: </span>
+                                                    18.08.2015 23:59					</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-4">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Просмотров: </span>
+
+                                                    0					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Участников: </span>
+
+                                                    0					</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="Search-clear"></div>
+                                    <div class="Search-item-advanced">
+
+
+
+                                        <div class="Search-item-advanced-content">
+
+                                            <b>
+                                                Атомная отрасль		</b>
+
+                                            <div style="padding: 10px">
+                                                Чтобы просматривать расширенную информацию о торговых процедурах, пожалуйста, выполните вход в систему, используя поля в правой верхней части страницы.
+                                                <br>
+                                                Если Вы не являетесь участником Системы, Вам необходимо <a href="/personal/registration/">зарегистрироваться</a>. Регистрация является бесплатной!
+                                            </div>
+
+
+                                        </div>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_left"></a>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_right"></a>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="Search-result-item">
+                                    <div class="Search-wrapper">
+                                        <div class="Search-item-1">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <a
+                                                            href="/trades/atom/PriceMonitoring/?action=view&id=3073"
+                                                            >Круг г/к 50-В1 2590/40Х-2 4543</a>
+                                                </div>
+
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Начальная цена: </span>
+
+                                                    1.00&nbsp;RUB
+                                                </div>
+                                                <div class="Search-item-option">
+
+                                                    <div class="Search-item-purchase">
+                                                        <ul class="not_list"><li><span>Закупка</span></li></ul>
+                                                    </div>
+
+
+                                                    <a class="Search-item-button" href="/trades/atom/PriceMonitoring/?action=view&id=3073">Принять участие</a>
+
+                                                    <br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-2">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+
+                                                    Мониторинг цен					№ 2202332-5				</div>
+                                                <div class="Search-item-option">
+
+											<span class="Search-item-label">
+											Организатор:
+										</span>
+                                                    <a target="_blank" href="/firms/view_firm.html?id=lPuLZUP1Ije8U3PQDTcVnIlgae7IKZYBK_BgRvzg7WBwdb3sv121CcHPxS2KJTCcXbYPAwEiIgvr7PDLV-Ntxw&fi=76103">
+                                                        Публичное акционерное общество &quot;Машиностроительный завод&quot;						</a>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-3">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    Идёт приём заявок				</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата публикации: </span>
+                                                    07.08.2015 16:11					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата завершения: </span>
+                                                    18.08.2015 23:59					</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-4">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Просмотров: </span>
+
+                                                    0					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Участников: </span>
+
+                                                    0					</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="Search-clear"></div>
+                                    <div class="Search-item-advanced">
+
+
+
+                                        <div class="Search-item-advanced-content">
+
+                                            <b>
+                                                Атомная отрасль		</b>
+
+                                            <div style="padding: 10px">
+                                                Чтобы просматривать расширенную информацию о торговых процедурах, пожалуйста, выполните вход в систему, используя поля в правой верхней части страницы.
+                                                <br>
+                                                Если Вы не являетесь участником Системы, Вам необходимо <a href="/personal/registration/">зарегистрироваться</a>. Регистрация является бесплатной!
+                                            </div>
+
+
+                                        </div>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_left"></a>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_right"></a>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="Search-result-item">
+                                    <div class="Search-wrapper">
+                                        <div class="Search-item-1">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <a
+                                                            href="/trades/atom/PriceMonitoring/?action=view&id=3073"
+                                                            >Круг г/к 40-В1 2590/40Х 4543</a>
+                                                </div>
+
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Начальная цена: </span>
+
+                                                    1.00&nbsp;RUB
+                                                </div>
+                                                <div class="Search-item-option">
+
+                                                    <div class="Search-item-purchase">
+                                                        <ul class="not_list"><li><span>Закупка</span></li></ul>
+                                                    </div>
+
+
+                                                    <a class="Search-item-button" href="/trades/atom/PriceMonitoring/?action=view&id=3073">Принять участие</a>
+
+                                                    <br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-2">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+
+                                                    Мониторинг цен					№ 2202332-6				</div>
+                                                <div class="Search-item-option">
+
+											<span class="Search-item-label">
+											Организатор:
+										</span>
+                                                    <a target="_blank" href="/firms/view_firm.html?id=lPuLZUP1Ije8U3PQDTcVnIlgae7IKZYBK_BgRvzg7WBwdb3sv121CcHPxS2KJTCcXbYPAwEiIgvr7PDLV-Ntxw&fi=76103">
+                                                        Публичное акционерное общество &quot;Машиностроительный завод&quot;						</a>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-3">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    Идёт приём заявок				</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата публикации: </span>
+                                                    07.08.2015 16:11					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата завершения: </span>
+                                                    18.08.2015 23:59					</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-4">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Просмотров: </span>
+
+                                                    0					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Участников: </span>
+
+                                                    0					</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="Search-clear"></div>
+                                    <div class="Search-item-advanced">
+
+
+
+                                        <div class="Search-item-advanced-content">
+
+                                            <b>
+                                                Атомная отрасль		</b>
+
+                                            <div style="padding: 10px">
+                                                Чтобы просматривать расширенную информацию о торговых процедурах, пожалуйста, выполните вход в систему, используя поля в правой верхней части страницы.
+                                                <br>
+                                                Если Вы не являетесь участником Системы, Вам необходимо <a href="/personal/registration/">зарегистрироваться</a>. Регистрация является бесплатной!
+                                            </div>
+
+
+                                        </div>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_left"></a>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_right"></a>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="Search-result-item">
+                                    <div class="Search-wrapper">
+                                        <div class="Search-item-1">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <a
+                                                            href="/trades/atom/PriceMonitoring/?action=view&id=3073"
+                                                            >Круг г/к 60-В1 2590/40Х-2 4543</a>
+                                                </div>
+
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Начальная цена: </span>
+
+                                                    1.00&nbsp;RUB
+                                                </div>
+                                                <div class="Search-item-option">
+
+                                                    <div class="Search-item-purchase">
+                                                        <ul class="not_list"><li><span>Закупка</span></li></ul>
+                                                    </div>
+
+
+                                                    <a class="Search-item-button" href="/trades/atom/PriceMonitoring/?action=view&id=3073">Принять участие</a>
+
+                                                    <br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-2">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+
+                                                    Мониторинг цен					№ 2202332-7				</div>
+                                                <div class="Search-item-option">
+
+											<span class="Search-item-label">
+											Организатор:
+										</span>
+                                                    <a target="_blank" href="/firms/view_firm.html?id=lPuLZUP1Ije8U3PQDTcVnIlgae7IKZYBK_BgRvzg7WBwdb3sv121CcHPxS2KJTCcXbYPAwEiIgvr7PDLV-Ntxw&fi=76103">
+                                                        Публичное акционерное общество &quot;Машиностроительный завод&quot;						</a>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-3">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    Идёт приём заявок				</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата публикации: </span>
+                                                    07.08.2015 16:11					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата завершения: </span>
+                                                    18.08.2015 23:59					</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-4">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Просмотров: </span>
+
+                                                    0					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Участников: </span>
+
+                                                    0					</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="Search-clear"></div>
+                                    <div class="Search-item-advanced">
+
+
+
+                                        <div class="Search-item-advanced-content">
+
+                                            <b>
+                                                Атомная отрасль		</b>
+
+                                            <div style="padding: 10px">
+                                                Чтобы просматривать расширенную информацию о торговых процедурах, пожалуйста, выполните вход в систему, используя поля в правой верхней части страницы.
+                                                <br>
+                                                Если Вы не являетесь участником Системы, Вам необходимо <a href="/personal/registration/">зарегистрироваться</a>. Регистрация является бесплатной!
+                                            </div>
+
+
+                                        </div>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_left"></a>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_right"></a>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="Search-result-item">
+                                    <div class="Search-wrapper">
+                                        <div class="Search-item-1">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <a
+                                                            href="/trades/atom/PriceMonitoring/?action=view&id=3072"
+                                                            >Пластина резиновая маслобензостойкая  1Ф-1-МБС-С-10</a>
+                                                </div>
+
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Начальная цена: </span>
+
+                                                    1.00&nbsp;RUB
+                                                </div>
+                                                <div class="Search-item-option">
+
+                                                    <div class="Search-item-purchase">
+                                                        <ul class="not_list"><li><span>Закупка</span></li></ul>
+                                                    </div>
+
+
+                                                    <a class="Search-item-button" href="/trades/atom/PriceMonitoring/?action=view&id=3072">Принять участие</a>
+
+                                                    <br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-2">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+
+                                                    Мониторинг цен					№ 2202330-1				</div>
+                                                <div class="Search-item-option">
+
+											<span class="Search-item-label">
+											Организатор:
+										</span>
+                                                    <a target="_blank" href="/firms/view_firm.html?id=lPuLZUP1Ije8U3PQDTcVnDwG1yPg4-KgTN8tVNtBen3-wW_nX8mHJDyO75YP1SRSl4HbTroeYaz_Ke6Yc8HOtw&fi=54873">
+                                                        Филиал  ОАО &quot;Концерн Росэнергоатом&quot; &quot;Ростовская атомная станция&quot;						</a>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-3">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    Идёт приём заявок				</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата публикации: </span>
+                                                    07.08.2015 16:09					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата завершения: </span>
+                                                    18.08.2015 23:59					</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-4">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Просмотров: </span>
+
+                                                    0					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Участников: </span>
+
+                                                    0					</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="Search-clear"></div>
+                                    <div class="Search-item-advanced">
+
+
+
+                                        <div class="Search-item-advanced-content">
+
+                                            <b>
+                                                Атомная отрасль		</b>
+
+                                            <div style="padding: 10px">
+                                                Чтобы просматривать расширенную информацию о торговых процедурах, пожалуйста, выполните вход в систему, используя поля в правой верхней части страницы.
+                                                <br>
+                                                Если Вы не являетесь участником Системы, Вам необходимо <a href="/personal/registration/">зарегистрироваться</a>. Регистрация является бесплатной!
+                                            </div>
+
+
+                                        </div>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_left"></a>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_right"></a>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="Search-result-item">
+                                    <div class="Search-wrapper">
+                                        <div class="Search-item-1">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <a
+                                                            href="/trades/atom/PriceMonitoring/?action=view&id=3071"
+                                                            >латунь листовая Л63 0,5мм полутвердая ГОСТ 15527-70</a>
+                                                </div>
+
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Начальная цена: </span>
+
+                                                    1.00&nbsp;RUB
+                                                </div>
+                                                <div class="Search-item-option">
+
+                                                    <div class="Search-item-purchase">
+                                                        <ul class="not_list"><li><span>Закупка</span></li></ul>
+                                                    </div>
+
+
+                                                    <a class="Search-item-button" href="/trades/atom/PriceMonitoring/?action=view&id=3071">Принять участие</a>
+
+                                                    <br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-2">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+
+                                                    Мониторинг цен					№ 2202329-1				</div>
+                                                <div class="Search-item-option">
+
+											<span class="Search-item-label">
+											Организатор:
+										</span>
+                                                    <a target="_blank" href="/firms/view_firm.html?id=lPuLZUP1Ije8U3PQDTcVnD61b992oao8un7F5rp7qDtIEzCCDHtt7eJ-kYupK4bgIrJnuETzplBcy7T3_LTPmQ&fi=64798">
+                                                        &quot;Смоленскатомэнергоремонт&quot; - филиал АО &quot;Атомэнергоремонт&quot;						</a>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-3">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    Идёт приём заявок				</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата публикации: </span>
+                                                    07.08.2015 16:05					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Дата завершения: </span>
+                                                    18.08.2015 23:59					</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="Search-item-4">
+                                            <div class="Search-item-content">
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Просмотров: </span>
+
+                                                    0					</div>
+                                                <div class="Search-item-option">
+                                                    <span class="Search-item-label">Участников: </span>
+
+                                                    0					</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="Search-clear"></div>
+                                    <div class="Search-item-advanced">
+
+
+
+                                        <div class="Search-item-advanced-content">
+
+                                            <b>
+                                                Атомная отрасль		</b>
+
+                                            <div style="padding: 10px">
+                                                Чтобы просматривать расширенную информацию о торговых процедурах, пожалуйста, выполните вход в систему, используя поля в правой верхней части страницы.
+                                                <br>
+                                                Если Вы не являетесь участником Системы, Вам необходимо <a href="/personal/registration/">зарегистрироваться</a>. Регистрация является бесплатной!
+                                            </div>
+
+
+                                        </div>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_left"></a>
+                                        <a href="javascript:;" class="Search-item-advanced-button advanced-button_right"></a>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="pages_number cf"><ul class="pagination pagination-sm pages cr3 cf"><li class="active"><span>1</span></li><li><a href="/trades/procedure/search/?page=2">2</a></li><li><a href="/trades/procedure/search/?page=3">3</a></li><li><a href="/trades/procedure/search/?page=4">4</a></li><li><a href="/trades/procedure/search/?page=5">5</a></li><li><a href="/trades/procedure/search/?page=6">6</a></li><li><a> &hellip;</a></li><li><a href="/trades/procedure/search/?page=1000">1000</a></li></ul></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="Search-clear"></div>
+        </div>
+
+        </form>
+
+        <div
+                id="dialog-classifier"
+                class="tree_selector"
+                title="Классификатор"
+                data-result-name="okdp[]"
+                data-target-values-id="dialog-classifier-values"
+                data-target-values-visual-id="dialog-classifier-values-visual"
+                >
+            <div class="popup_choice block_for_with tree_selector">
+                <div class="popup_otst">
+
+                    <div class="poisk">
+                        <div class="input_name">Поиск категории:</div>
+                        <div class="for_input cr3"><input type="text" name="" value="" class="popup_search_input not_close" id="dialog-classifier-search"></div>
+                        <div class="for_search" id="dialog-classifier-search-result">
+                            <div class="for_block"></div>
+                        </div>
+                    </div>
+
+                    <div class="block_checkbox">
+
+
+                        <div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np2-1"data-left-key="1" data-right-key="4042"><label for="np2-1"><span></span><i>[A0000000]</i> Раздел A Продукция и услуги сельского хозяйства, охоты и лесоводства</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np3-1"data-left-key="4043" data-right-key="4858"><label for="np3-1"><span></span><i>[B0000000]</i> Раздел B Продукция и услуги рыболовства</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np4-1"data-left-key="4859" data-right-key="6062"><label for="np4-1"><span></span><i>[C0000000]</i> Раздел C Продукция и услуги горнодобывающей промышленности и разработки карьеров</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np5-1"data-left-key="6063" data-right-key="75514"><label for="np5-1"><span></span><i>[D0000000]</i> Раздел D Продукция и услуги обрабатывающей промышленности</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np6-1"data-left-key="75515" data-right-key="75632"><label for="np6-1"><span></span><i>[E0000000]</i> Раздел E Электроэнергия, газ и водоснабжение</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np7-1"data-left-key="75633" data-right-key="81980"><label for="np7-1"><span></span><i>[F0000000]</i> Раздел F Продукция и услуги строительства</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np8-1"data-left-key="81981" data-right-key="83972"><label for="np8-1"><span></span><i>[G0000000]</i> Раздел G Услуги в оптовой и розничной торговле, услуги по техническому обслуживанию и ремонту автомобилей, бытовых приборов и предметов личного пользования</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np9-1"data-left-key="83973" data-right-key="84090"><label for="np9-1"><span></span><i>[H0000000]</i> Раздел H Услуги гостиниц и ресторанов</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np10-1"data-left-key="84091" data-right-key="84538"><label for="np10-1"><span></span><i>[I0000000]</i> Раздел I Услуги транспорта, складского хозяйства и связи</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np11-1"data-left-key="84539" data-right-key="84956"><label for="np11-1"><span></span><i>[J0000000]</i> Раздел J Услуги по финансовому посредничеству</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np12-1"data-left-key="84957" data-right-key="85938"><label for="np12-1"><span></span><i>[K0000000]</i> Раздел K Услуги, связанные с недвижимым имуществом, арендой, исследовательской и коммерческой деятельностью</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np13-1"data-left-key="85939" data-right-key="86114"><label for="np13-1"><span></span><i>[L0000000]</i> Раздел L Услуги в области государственного управления и обороны, услуги обязательного социального страхования</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np14-1"data-left-key="86115" data-right-key="86276"><label for="np14-1"><span></span><i>[M0000000]</i> Раздел M Услуги в области образования</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np15-1"data-left-key="86277" data-right-key="86926"><label for="np15-1"><span></span><i>[N0000000]</i> Раздел N Услуги в области здравоохранения и в социальной области</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np16-1"data-left-key="86927" data-right-key="88926"><label for="np16-1"><span></span><i>[O0000000]</i> Раздел O Услуги коммунальные, социальные и персональные прочие</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np17-1"data-left-key="88927" data-right-key="88940"><label for="np17-1"><span></span><i>[P0000000]</i> Раздел P Услуги по ведению частных домашних хозяйств с наемным обслуживанием</label></div><div class="for_checkbox cf"><span class="for_spisok_open_ajax plus"></span><input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all" id="np18-1"data-left-key="88941" data-right-key="88956"><label for="np18-1"><span></span><i>[Q0000000]</i> Раздел Q Услуги, предоставляемые экстерриториальными организациями и органами</label></div>
+                    </div>
+
+                </div>
+
+                <div class="spisok_template">
+                    <div class="spisok_template_last_leaf">
+                        <div class="for_checkbox cf">
+                            <input type="checkbox" name="" value="" autocomplete="off" class="for_check_all jq" id="np{{okdp_id}}-1"
+                                   data-left-key="{{left_key}}" data-right-key="{{right_key}}">
+                            <label for="np{{okdp_id}}-1">
+                                <span></span>
+                                <i>[{{directory}}{{code}}]</i> {{name}}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="spisok_template_middle_leaf">
+                        <div class="for_checkbox cf">
+                            <span class="for_spisok_open_ajax plus"></span>
+                            <input type="checkbox" name="" value="" autocomplete="off" class="check_all for_check_all jq" id="np{{okdp_id}}-1"
+                                   data-left-key="{{left_key}}" data-right-key="{{right_key}}">
+                            <label for="np{{okdp_id}}-1"><span></span><i>[{{directory}}{{code}}]</i> {{name}}</label>
+                        </div>
+                    </div>
+                    <div class="spisok_template_branch">
+                        <div class="checkbox_obr close_block"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+	$(window).load(function(){
+		$('#dialog-classifier').treeSelector_codes({
+			name_id_for_check: 'np',
+			exec_name_id: /^np([0-9]+)-1$/,
+			route_get_branch: '/directory/okdp/get_branch/',
+			route_search: '/directory/okdp/search/',
+			route_get_tree: '/directory/okdp/get_tree/'
+		});
+	});
+</script>
+
+        <div
+                id="dialog-region"
+                class="tree_selector"
+                title="Выбор областей"
+                data-result-name="region[]"
+                data-target-values-id="dialog-region-values"
+                data-target-values-visual-id="dialog-region-values-visual"
+                >
+            <div class="popup_choice block_for_with tree_selector">
+                <div class="popup_otst">
+
+                    <div class="poisk">
+                        <div class="input_name">Поиск региона:</div>
+                        <div class="for_input cr3">
+                            <input type="text" name="" value="" class="popup_search_input not_close" id="dialog-region-search" data-tree-id="dialog-region-tree">
+                        </div>
+
+                        <div class="for_search" id="dialog-region-search-result">
+                            <div class="for_block"></div>
+                        </div>
+                    </div>
+
+                    <div class="block_checkbox" id="dialog-region-tree">
+                        <div class="for_checkbox cf"><input type="checkbox" name="" value="" class="check_all" id="t_all-1"><label for="t_all-1"><span></span><b>Все регионы</b></label></div>
+                        <div class="checkbox_obr" id="for_t_all-1">
+
+
+                            <div class="for_checkbox cf">
+                                <span class="for_spisok_open plus"></span>
+                                <input class="check_all for_check_all" type="checkbox" name="region[]" id="d131-1"/>
+                                <label for="d131-1"><span></span>Дальневосточный федеральный округ</label>
+                            </div>
+                            <div class="checkbox_obr close_block" id="for_d131-1">
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="10" id="r10-1"/>
+                                    <label for="r10-1"><span></span>Амурская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="99" id="r99-1"/>
+                                    <label for="r99-1"><span></span>Еврейская автономная область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="30" id="r30-1"/>
+                                    <label for="r30-1"><span></span>Камчатский край</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="44" id="r44-1"/>
+                                    <label for="r44-1"><span></span>Магаданская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="5" id="r5-1"/>
+                                    <label for="r5-1"><span></span>Приморский край</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="98" id="r98-1"/>
+                                    <label for="r98-1"><span></span>Республика Саха</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="64" id="r64-1"/>
+                                    <label for="r64-1"><span></span>Сахалинская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="8" id="r8-1"/>
+                                    <label for="r8-1"><span></span>Хабаровский край</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="77" id="r77-1"/>
+                                    <label for="r77-1"><span></span>Чукотский автономный округ</label>
+                                </div>
+                            </div>
+
+
+                            <div class="for_checkbox cf">
+                                <span class="for_spisok_open plus"></span>
+                                <input class="check_all for_check_all" type="checkbox" name="region[]" id="d136-1"/>
+                                <label for="d136-1"><span></span>Крымский федеральный округ</label>
+                            </div>
+                            <div class="checkbox_obr close_block" id="for_d136-1">
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="112" id="r112-1"/>
+                                    <label for="r112-1"><span></span>Республика Крым</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="139" id="r139-1"/>
+                                    <label for="r139-1"><span></span>Севастополь</label>
+                                </div>
+                            </div>
+
+
+                            <div class="for_checkbox cf">
+                                <span class="for_spisok_open plus"></span>
+                                <input class="check_all for_check_all" type="checkbox" name="region[]" id="d134-1"/>
+                                <label for="d134-1"><span></span>Приволжский федеральный округ</label>
+                            </div>
+                            <div class="checkbox_obr close_block" id="for_d134-1">
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="33" id="r33-1"/>
+                                    <label for="r33-1"><span></span>Кировская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="22" id="r22-1"/>
+                                    <label for="r22-1"><span></span>Нижегородская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="53" id="r53-1"/>
+                                    <label for="r53-1"><span></span>Оренбургская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="56" id="r56-1"/>
+                                    <label for="r56-1"><span></span>Пензенская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="57" id="r57-1"/>
+                                    <label for="r57-1"><span></span>Пермский край</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="80" id="r80-1"/>
+                                    <label for="r80-1"><span></span>Республика Башкортостан</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="88" id="r88-1"/>
+                                    <label for="r88-1"><span></span>Республика Марий Эл</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="89" id="r89-1"/>
+                                    <label for="r89-1"><span></span>Республика Мордовия</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="92" id="r92-1"/>
+                                    <label for="r92-1"><span></span>Республика Татарстан</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="36" id="r36-1"/>
+                                    <label for="r36-1"><span></span>Самарская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="63" id="r63-1"/>
+                                    <label for="r63-1"><span></span>Саратовская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="94" id="r94-1"/>
+                                    <label for="r94-1"><span></span>Удмуртская Республика</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="73" id="r73-1"/>
+                                    <label for="r73-1"><span></span>Ульяновская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="97" id="r97-1"/>
+                                    <label for="r97-1"><span></span>Чувашская Республика</label>
+                                </div>
+                            </div>
+
+
+                            <div class="for_checkbox cf">
+                                <span class="for_spisok_open plus"></span>
+                                <input class="check_all for_check_all" type="checkbox" name="region[]" id="d130-1"/>
+                                <label for="d130-1"><span></span>Северо-Западный федеральный округ</label>
+                            </div>
+                            <div class="checkbox_obr close_block" id="for_d130-1">
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="11" id="r11-1"/>
+                                    <label for="r11-1"><span></span>Архангельская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="19" id="r19-1"/>
+                                    <label for="r19-1"><span></span>Вологодская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="27" id="r27-1"/>
+                                    <label for="r27-1"><span></span>Калининградская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="41" id="r41-1"/>
+                                    <label for="r41-1"><span></span>Ленинградская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="47" id="r47-1"/>
+                                    <label for="r47-1"><span></span>Мурманская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="49" id="r49-1"/>
+                                    <label for="r49-1"><span></span>Новгородская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="58" id="r58-1"/>
+                                    <label for="r58-1"><span></span>Псковская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="86" id="r86-1"/>
+                                    <label for="r86-1"><span></span>Республика Карелия</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="87" id="r87-1"/>
+                                    <label for="r87-1"><span></span>Республика Коми</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="138" id="r138-1"/>
+                                    <label for="r138-1"><span></span>Санкт-Петербург</label>
+                                </div>
+                            </div>
+
+
+                            <div class="for_checkbox cf">
+                                <span class="for_spisok_open plus"></span>
+                                <input class="check_all for_check_all" type="checkbox" name="region[]" id="d135-1"/>
+                                <label for="d135-1"><span></span>Северо-Кавказский федеральный округ</label>
+                            </div>
+                            <div class="checkbox_obr close_block" id="for_d135-1">
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="83" id="r83-1"/>
+                                    <label for="r83-1"><span></span>Кабардино-Балкарская Республика</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="91" id="r91-1"/>
+                                    <label for="r91-1"><span></span>Карачаево-Черкесская Республика</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="82" id="r82-1"/>
+                                    <label for="r82-1"><span></span>Республика Дагестан</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="26" id="r26-1"/>
+                                    <label for="r26-1"><span></span>Республика Ингушетия</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="90" id="r90-1"/>
+                                    <label for="r90-1"><span></span>Республика Северная Осетия - Алания</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="7" id="r7-1"/>
+                                    <label for="r7-1"><span></span>Ставропольский край</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="96" id="r96-1"/>
+                                    <label for="r96-1"><span></span>Чеченская Республика</label>
+                                </div>
+                            </div>
+
+
+                            <div class="for_checkbox cf">
+                                <span class="for_spisok_open plus"></span>
+                                <input class="check_all for_check_all" type="checkbox" name="region[]" id="d132-1"/>
+                                <label for="d132-1"><span></span>Сибирский федеральный округ</label>
+                            </div>
+                            <div class="checkbox_obr close_block" id="for_d132-1">
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="1" id="r1-1"/>
+                                    <label for="r1-1"><span></span>Алтайский край</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="76" id="r76-1"/>
+                                    <label for="r76-1"><span></span>Забайкальский край</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="25" id="r25-1"/>
+                                    <label for="r25-1"><span></span>Иркутская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="32" id="r32-1"/>
+                                    <label for="r32-1"><span></span>Кемеровская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="4" id="r4-1"/>
+                                    <label for="r4-1"><span></span>Красноярский край</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="50" id="r50-1"/>
+                                    <label for="r50-1"><span></span>Новосибирская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="52" id="r52-1"/>
+                                    <label for="r52-1"><span></span>Омская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="84" id="r84-1"/>
+                                    <label for="r84-1"><span></span>Республика Алтай</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="81" id="r81-1"/>
+                                    <label for="r81-1"><span></span>Республика Бурятия</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="93" id="r93-1"/>
+                                    <label for="r93-1"><span></span>Республика Тыва</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="95" id="r95-1"/>
+                                    <label for="r95-1"><span></span>Республика Хакасия</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="69" id="r69-1"/>
+                                    <label for="r69-1"><span></span>Томская область</label>
+                                </div>
+                            </div>
+
+
+                            <div class="for_checkbox cf">
+                                <span class="for_spisok_open plus"></span>
+                                <input class="check_all for_check_all" type="checkbox" name="region[]" id="d133-1"/>
+                                <label for="d133-1"><span></span>Уральский федеральный округ</label>
+                            </div>
+                            <div class="checkbox_obr close_block" id="for_d133-1">
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="37" id="r37-1"/>
+                                    <label for="r37-1"><span></span>Курганская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="65" id="r65-1"/>
+                                    <label for="r65-1"><span></span>Свердловская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="71" id="r71-1"/>
+                                    <label for="r71-1"><span></span>Тюменская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="75" id="r75-1"/>
+                                    <label for="r75-1"><span></span>Челябинская область</label>
+                                </div>
+                            </div>
+
+
+                            <div class="for_checkbox cf">
+                                <span class="for_spisok_open plus"></span>
+                                <input class="check_all for_check_all" type="checkbox" name="region[]" id="d128-1"/>
+                                <label for="d128-1"><span></span>Центральный федеральный округ</label>
+                            </div>
+                            <div class="checkbox_obr close_block" id="for_d128-1">
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="14" id="r14-1"/>
+                                    <label for="r14-1"><span></span>Белгородская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="15" id="r15-1"/>
+                                    <label for="r15-1"><span></span>Брянская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="17" id="r17-1"/>
+                                    <label for="r17-1"><span></span>Владимирская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="20" id="r20-1"/>
+                                    <label for="r20-1"><span></span>Воронежская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="24" id="r24-1"/>
+                                    <label for="r24-1"><span></span>Ивановская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="29" id="r29-1"/>
+                                    <label for="r29-1"><span></span>Калужская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="34" id="r34-1"/>
+                                    <label for="r34-1"><span></span>Костромская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="38" id="r38-1"/>
+                                    <label for="r38-1"><span></span>Курская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="42" id="r42-1"/>
+                                    <label for="r42-1"><span></span>Липецкая область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="137" id="r137-1"/>
+                                    <label for="r137-1"><span></span>Москва</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="46" id="r46-1"/>
+                                    <label for="r46-1"><span></span>Московская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="54" id="r54-1"/>
+                                    <label for="r54-1"><span></span>Орловская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="61" id="r61-1"/>
+                                    <label for="r61-1"><span></span>Рязанская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="66" id="r66-1"/>
+                                    <label for="r66-1"><span></span>Смоленская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="68" id="r68-1"/>
+                                    <label for="r68-1"><span></span>Тамбовская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="28" id="r28-1"/>
+                                    <label for="r28-1"><span></span>Тверская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="70" id="r70-1"/>
+                                    <label for="r70-1"><span></span>Тульская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="78" id="r78-1"/>
+                                    <label for="r78-1"><span></span>Ярославская область</label>
+                                </div>
+                            </div>
+
+
+                            <div class="for_checkbox cf">
+                                <span class="for_spisok_open plus"></span>
+                                <input class="check_all for_check_all" type="checkbox" name="region[]" id="d129-1"/>
+                                <label for="d129-1"><span></span>Южный федеральный округ</label>
+                            </div>
+                            <div class="checkbox_obr close_block" id="for_d129-1">
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="12" id="r12-1"/>
+                                    <label for="r12-1"><span></span>Астраханская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="18" id="r18-1"/>
+                                    <label for="r18-1"><span></span>Волгоградская область</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="3" id="r3-1"/>
+                                    <label for="r3-1"><span></span>Краснодарский край</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="79" id="r79-1"/>
+                                    <label for="r79-1"><span></span>Республика Адыгея</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="85" id="r85-1"/>
+                                    <label for="r85-1"><span></span>Республика Калмыкия</label>
+                                </div>
+                                <div class="for_checkbox cf">
+                                    <input class="for_check_all" type="checkbox" name="region[]" value="60" id="r60-1"/>
+                                    <label for="r60-1"><span></span>Ростовская область</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+	$(window).load(function(){
+		$('#dialog-region').treeSelector_regions({
+			map_script: false		});
+	});
+</script>
+
+        <div class="Search-filter-hidden-modal">
+            <form data-action="/trades/procedure/search/filter/add/" data-list-action="/trades/procedure/search/?filter_id=" class="Search-result-save-filter-modal-form" data-scope="template_data">
+
+                <div class="Modal-title">Сохранение фильтра</div>
+
+                <div class="Search-query-string">
+                    <div class="Search-query-button">
+                        <input type="submit" id="save_filter_submit"/>
+                        <label for="save_filter_submit">Сохранить</label>
+                    </div>
+                    <div class="Search-filter-name-field">
+                        <label for="filter_name">Название фильтра</label>
+                        <input type="text" name="filter[name]" maxlength="100" id="filter_name"/>
+                    </div>
+                </div>
+                <div class="Search-modal-message">&nbsp;</div>
+            </form>
+            <form method="POST" class="Search-filter-delete-confirmation" action="/trades/procedure/search/filter/delete">
+                <input type="hidden" name="filter_id" value=""/>
+
+                <p>Вы действительно хотите удалить фильтр?</p>
+
+                <div class="button-submit">
+                    <label class="button-submit-text">Да</label>
+                    <input type="submit" class="button-submit-input" value="&nbsp;" />
+                </div>
+                <a class="button-anchor Search-filter-delete-confirmation-no"  href="javascript:;">Нет</a>
+            </form>
+
+        </div>
+        </section>
+
+    </div>
+
+</div>
+
+</div>
+
+<div id="callback" class="win_dialog" title="Заказать обратный звонок">
+    <div class="popup_callback_new for_form_v1 block_for_with">
+        <div class="popup_otst"></div>
+    </div>
+</div>
+<div id="emailback" class="win_dialog" title="Обратная связь">
+    <div class="popup_callback_new for_form_v1 block_for_with">
+        <div class="popup_otst"></div>
+    </div>
+</div>
+
+<footer>
+    <div class="for_links b_links">
+        <div class="cr5">
+            <a href="/about/">О компании</a>
+            <a href="/personal/">Личный кабинет</a>
+            <a href="/trades/procedure/search/">Торговая площадка</a>
+            <a href="/firms/">Участники</a>
+            <a href="/news/">Новости</a>
+            <a href="/personal/registration/">Регистрация</a>
+            <a href="/publications/">Фабрикант в СМИ</a>
+            <a class="emailback-link" data-link="emailback-link" href="#">Обратная связь</a>
+        </div>
+    </div>
+    <div class="for_links">
+        <div class="cr5">
+            <a href="/personal/tariff/add/">Тарифные планы</a>
+            <a href="/presentations/">Презентации</a>
+            <a href="/news/">Новости</a>
+            <a href="/rules/">Правила работы</a>
+        </div>
+    </div>
+    <div class="for_bottom">
+        <div class="bottom cr5 gr_d_blue">
+            <span class="kavinfo" id="kavinfo"><span class="icon"></span>Защищен Антивирусом Касперского</span>
+            <div class="copyright">
+                <p><b>Оператор Системы &mdash; "Фабрикант.ру". Все права защищены &copy; 2015</b></p>
+                <p>
+                    Телефон: Москва (495) 514-02-04,
+                    Россия 8-800-200-02-04.
+                    <a href="/?action=emailback">Отправить нам сообщение или задать вопрос</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<div id="overlay" class="overlay"></div>
+
+
+
+<script>
+	jQuery(function($){
+		/* Moscow time */
+		$('.h_date').currentDateTime(1438964357000);
+	});
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+	(function (d, w, c) {
+		(w[c] = w[c] || []).push(function() {
+			try {
+				w.yaCounter11864500 = new Ya.Metrika({id:11864500, enableAll: true, webvisor:true});
+			} catch(e) { }
+		});
+
+		var n = d.getElementsByTagName("script")[0],
+			s = d.createElement("script"),
+			f = function () { n.parentNode.insertBefore(s, n); };
+		s.type = "text/javascript";
+		s.async = true;
+		s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+		if (w.opera == "[object Opera]") {
+			d.addEventListener("DOMContentLoaded", f);
+		} else { f(); }
+	})(document, window, "yandex_metrika_callbacks");
+
+	function popup(e, p_url, p_name, p_w, p_h) {
+		p_l = e.screenX; p_t = e.screenY;
+		if (p_t + p_h>screen.availHeight) p_t-=p_h;
+		if (p_l+p_w>screen.availWidth) p_l-=p_w;
+		if (w = window.open(p_url, p_name, 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,left=' + p_l + ',top=' + p_t + ',width=' + p_w + ',height=' + p_h))
+		{	w.focus();	}
+		return w;
+	}
+
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/11864500" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<!-- /Yandex.Metrika counter -->
+<!--zabbix_check-->
+</body>
+</html>
