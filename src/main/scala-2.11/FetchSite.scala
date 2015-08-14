@@ -1,21 +1,24 @@
 
-import java.io.File
-import java.net.InetSocketAddress
-import java.nio.file.Files
 import java.text.{ParseException, SimpleDateFormat}
-import java.util.Date
-import akka.actor.ActorSystem
+import java.util.concurrent.TimeUnit
+import akka.Master
+import akka.actor.{PoisonPill, Props, Actor, ActorSystem}
+import akka.dispatch.Futures
+import akka.routing.{RoundRobinRoutingLogic, Router, ActorRefRoutee}
+import model._
 import org.ccil.cowan.tagsoup.jaxp.SAXFactoryImpl
+import org.elasticsearch.client.Client
 import org.elasticsearch.common.xcontent.{XContentFactory, XContentBuilder}
 import spray.http._
 import spray.client.pipelining._
+import utils.es.ESOperation
 
-import scala.concurrent.Future
+import scala.concurrent.duration.Duration
+import scala.concurrent.{Await, Promise, Future}
 import scala.io.{Codec, Source}
 import scala.util.{Failure, Success}
 import scala.xml.factory.XMLLoader
 import scala.xml.{Elem, NodeSeq, XML, Node}
-
 
 /**
  *
@@ -57,49 +60,18 @@ object FetchSite extends ESOperation {
     }
   }
 
-  def mainA (args: Array[String]) {
-    val client = getClient()
-
-    val y = XContentFactory.jsonBuilder()
-      .startObject()
-      .field("href", "http://ya.ru")
-      .field("title", "some long title ann short desreption")
-      .field("price", "10.00")
-      .field("name", "Martin")
-      .endObject()
-
-    val bulkRequest = client.prepareBulk()
-    bulkRequest.add(client.prepareIndex("fabrikant", "baseInfoTest", "1").setSource(y))
-    println("added: " + bulkRequest.execute().actionGet().getItems.length)
-    system.shutdown()
-  }
 
   def main (args: Array[String]) {
-
-    for (i<-1.to(1))
-    {
-      fetchSite(i, processSitePage)
+    val helloActor = system.actorOf(Props[Master], name = "master")
+    println(helloActor.path)
+    val f = Future {
+      for (i <- 37.to(50)) {
+        fetchSite(i, processSitePage)
+      }
     }
 
-    /*
-    println (x)
-
-    val id = x.href.substring(x.href.lastIndexOf("=")+1)
-    val client = getClient()
-
-    val y = XContentFactory.jsonBuilder()
-      .startObject()
-      .field("href", x.href)
-      .field("title", x.title)
-      .field("price", x.price)
-      .field("tradeType", x.tradeType)
-      .endObject()
-
-    val bulkRequest = client.prepareBulk()
-    bulkRequest.add(client.prepareIndex("fabrikant", "baseInfo", id).setSource(y))
-    println("added: " + bulkRequest.execute().actionGet().getItems.length)
-    */
-
+    //Await.result(f, Duration.apply(10, TimeUnit.SECONDS))
+    //system.shutdown()
     //fetchCommonSite("https://www.fabrikant.ru/trades/corporate/ProcedurePurchase/?action=view&id=3974#lot_1", process2)
   }
 
@@ -120,26 +92,15 @@ object FetchSite extends ESOperation {
           OrgInfo.create(itemWrapper.child(3)),
           TradeStatus.create(itemWrapper.child(5)),
           TradeInfo.create(itemWrapper.child(7)))
-          println(t)
 
-          val id = t.base.href.substring(t.base.href.lastIndexOf("=")+1)
-          val client = getClient()
-          val bulkRequest = client.prepareBulk()
-
-          val y = XContentFactory.jsonBuilder()
-            .startObject()
-            .field("href", t.base.href)
-            .field("title", t.base.title)
-            .field("price", t.base.price)
-            .field("tradeType", t.base.tradeType)
-            .endObject()
-
-          bulkRequest.add(client.prepareIndex("fabrikant", "trades", id).setSource(y))
-          println("added: " + bulkRequest.execute().actionGet().getItems.length)
+          system.actorSelection("akka://default/user/master") ! t
+          //router.route(t, Actor.noSender)
         }
       }
     }
   }
+
+
 
   def getCount(content: Node): Integer = {
     for (div <- content \\ "div") {
@@ -175,11 +136,12 @@ object FetchSite extends ESOperation {
         //func.apply(Source.fromFile("src/main/resources/dummy.html").getLines.mkString)
       case Success(resp) => println("success for: " + targetUrl)
         val respSource: String = resp.message.entity.asString
-        system.shutdown()
         //printToFile(new File("1.html")) { p => respSource.toString }
         func.apply(respSource)
+        //system.shutdown()
     }
 
+    "ok"
   }
 
   def printToFile(f: java.io.File)(op: java.io.PrintWriter => Unit) {
@@ -187,6 +149,8 @@ object FetchSite extends ESOperation {
     try { op(p) } finally { p.close() }
   }
 }
+
+
 
 
 

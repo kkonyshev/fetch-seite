@@ -1,4 +1,6 @@
-import org.elasticsearch.action.search.{SearchType, SearchResponse}
+package utils.es
+
+import org.elasticsearch.action.search.SearchType
 import org.elasticsearch.index.query.QueryBuilders
 
 /**

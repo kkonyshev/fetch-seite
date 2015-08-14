@@ -1,3 +1,5 @@
+package utils.es
+
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest
 import org.elasticsearch.action.bulk.BulkResponse
@@ -11,7 +13,6 @@ import org.elasticsearch.common.transport.InetSocketTransportAddress
 import org.elasticsearch.common.xcontent.XContentFactory._
 import org.elasticsearch.index.query.FilterBuilders._
 import org.elasticsearch.index.query.QueryBuilders
-import org.elasticsearch.node.NodeBuilder._
 import org.elasticsearch.search.sort.SortOrder
 
 import scala.io.Source

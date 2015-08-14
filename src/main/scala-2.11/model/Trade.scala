@@ -1,7 +1,9 @@
+package model
+
 import java.text.{ParseException, SimpleDateFormat}
 import java.util.Date
 
-import scala.xml.{NodeSeq, Node}
+import scala.xml.{Node, NodeSeq}
 
 /**
  * Created by ka on 08/08/15.
@@ -37,6 +39,7 @@ object OrgInfo {
     new OrgInfo(status, name, link)
   }
 }
+
 case class TradeStatus(status: String, publishDate: Date, endDate: Date)
 object TradeStatus {
   def create(n: Node): TradeStatus = {
@@ -57,6 +60,7 @@ object TradeStatus {
     }
   }
 }
+
 case class TradeInfo(views: Int, traders: Int)
 object TradeInfo {
   def create(n: Node): TradeInfo = {
@@ -69,4 +73,5 @@ object TradeInfo {
     new TradeInfo(viewsCount, tradersCount)
   }
 }
+
 case class Trade(base: BaseInfo, org: OrgInfo, status: TradeStatus, info: TradeInfo)
